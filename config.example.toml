@@ -1,0 +1,26 @@
+# Copy to config.toml and run: crypto-miner run -c config.toml
+
+# Proof-of-work algorithm. Available: "sha256d" (Bitcoin family).
+algorithm = "sha256d"
+
+# Worker threads; 0 = one per logical CPU.
+threads = 0
+
+# Local status API used by the monitoring platform. Remove to disable.
+api_listen = "127.0.0.1:4048"
+
+# --- Pool mining (Stratum v1) ---------------------------------------------
+[backend]
+type = "stratum"
+url = "stratum+tcp://pool.example.com:3333"
+user = "YOUR_WALLET_OR_ACCOUNT.worker1"
+password = "x"
+
+# --- Solo mining against your own node --------------------------------------
+# [backend]
+# type = "solo"
+# rpc_url = "http://127.0.0.1:8332"
+# rpc_cookie = "/home/you/.bitcoin/.cookie"   # or rpc_user + rpc_password
+# payout_address = "bc1q..."
+# coinbase_tag = "/crypto-miner/"
+# template_refresh_secs = 30

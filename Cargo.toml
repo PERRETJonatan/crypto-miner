@@ -1,0 +1,27 @@
+[package]
+name = "crypto-miner"
+version = "0.1.0"
+edition = "2021"
+description = "Pluggable multi-algorithm CPU miner with Stratum and solo (node RPC) backends"
+
+[dependencies]
+anyhow = "1"
+axum = "0.7"
+bitcoin = "0.32"
+clap = { version = "4", features = ["derive"] }
+hex = "0.4"
+primitive-types = "0.12"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = { version = "0.10", features = ["compress"] }
+tokio = { version = "1", features = ["full"] }
+toml = "0.8"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"

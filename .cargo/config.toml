@@ -1,0 +1,3 @@
+# Use SHA-NI / AVX2 etc. of the machine we build on.
+[build]
+rustflags = ["-C", "target-cpu=native"]
