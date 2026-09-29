@@ -5,7 +5,7 @@ Pluggable multi-algorithm CPU miner with two work sources:
 - **Stratum v1** pool mining (`mining.subscribe/authorize/notify/set_difficulty/submit`)
 - **Solo** mining against a Bitcoin Core compatible node (`getblocktemplate` / `submitblock`)
 
-It exposes a local JSON status API for the monitoring platform.
+It exposes a local JSON status API for the monitoring platform. See [docs/PROTOCOL.md](docs/PROTOCOL.md) for the node ↔ platform monitoring protocol.
 
 ## Usage
 
